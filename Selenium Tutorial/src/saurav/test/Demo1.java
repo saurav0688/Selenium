@@ -27,7 +27,13 @@ public class Demo1 {
 		assertEquals(driver.getCurrentUrl(), "http://demo.guru99.com/test/radio.html");
 		assertEquals(driver.getTitle(), "Radio Button & Check Box Demo");
 		
-		driver.findElement(By.xpath(".//input[@type='checkbox' and @value='checkbox2']")).click();
+		WebElement checkbox2 = driver.findElement(By.xpath(".//input[@type='checkbox' and @value='checkbox2']"));
+		checkbox2.click();
+		assertEquals(checkbox2.isSelected(), true); 
+		
+		checkbox2.click();
+		assertEquals(checkbox2.isSelected(), false); 	
+		
 		driver.findElement(By.xpath(".//input[@type='radio' and @value='Option 3']")).click();
 		
 	}
